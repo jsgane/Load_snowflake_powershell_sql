@@ -1,10 +1,10 @@
 # Define SQL Server connection and file details
-$SqlServer      = ""
-$SqlDBName      = ""
-$SqlUsername    = ""
-$SqlPassword    = "*"
+$SqlServer      = "bodsql\app01"
+$SqlDBName      = "comon_prod"
+$SqlUsername    = "sqlwindev"
+$SqlPassword    = "sql1234*"
 $TableName      = "dbo.VLinkLocalisation"
-$OutputPath     = "C:\Temp\mssql_src_exported_data.csv"
+$OutputPath     = "C:\Temp\mssql_vlnk_exported_data.csv"
 $Delimiter      = ","
 $Query          = "SELECT top 10000000 * FROM $TableName with (nolock)"
 
@@ -12,14 +12,14 @@ $StageName      = "MSSQL_DIRECT_STAGE"
 $FileFormatName = "mssql_csv_file_format"
 
 # Define Snowflake connection details
-$SnowflakeAccount   = ".eu-west-1" #"webhdwh-rj60778"
-$SnowflakeUser      = ""
+$SnowflakeAccount   = "dg63583.eu-west-1" #"webhdwh-rj60778"
+$SnowflakeUser      = "neemba_user"
 $SnowflakeRole      = "transform"
-$SnowflakePassword  = ""
+$SnowflakePassword  = "Neemb@Password2025"
 $SnowflakeWarehouse = "compute_wh"
-$SnowflakeDatabase  = ""
+$SnowflakeDatabase  = "NEEMBA"
 $SnowflakeSchema    = "EQUIPEMENT"
-$SnowflakeTable     = "a_bronze_taget_table" # 
+$SnowflakeTable     = "a_bronze_vlinklocalisation" # 
 
 
 # SQL creat file format on snowflake
@@ -53,7 +53,7 @@ $sql_create_stage_file = "C:\Temp\create_stage.sql"
 )
 
 $sql_create_table = @"
-create or replace table neemba.equipement.a_bronze_vlinklocalisation_(
+create or alter table neemba.equipement.a_bronze_vlinklocalisation(
 	idvlinklocalisation bigint null,
 	codeconstructeursource varchar(4) null,
 	numeroseriesource varchar(50) null,
