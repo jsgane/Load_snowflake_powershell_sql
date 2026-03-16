@@ -26,7 +26,7 @@ $SnowflakeTable     = "table_name" #
 $sql_create_file_format = @"
 CREATE OR REPLACE FILE FORMAT $FileFormatName
     TYPE = CSV
-    FIELD_DELIMITER = ','
+    FIELD_DELIMITER = '|'
     SKIP_HEADER = 1
     FIELD_OPTIONALLY_ENCLOSED_BY = '"'
     NULL_IF = ('NULL', '')
