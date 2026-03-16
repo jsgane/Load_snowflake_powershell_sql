@@ -1,8 +1,8 @@
 # Define SQL Server connection and file details
 $SqlServer      = "bodsql\app01"
-$SqlDBName      = "comon_prod"
-$SqlUsername    = "sqlwindev"
-$SqlPassword    = "sql1234*"
+$SqlDBName      = ""
+$SqlUsername    = ""
+$SqlPassword    = ""
 $TableName      = "dbo.VLinkLocalisation"
 $OutputPath     = "C:\Temp\mssql_vlnk_exported_data.csv"
 $Delimiter      = ","
@@ -12,14 +12,14 @@ $StageName      = "MSSQL_DIRECT_STAGE"
 $FileFormatName = "mssql_csv_file_format"
 
 # Define Snowflake connection details
-$SnowflakeAccount   = "dg63583.eu-west-1" #"webhdwh-rj60778"
-$SnowflakeUser      = "neemba_user"
+$SnowflakeAccount   = "account.eu-west-1" #"webhdwh-rj60778"
+$SnowflakeUser      = ""
 $SnowflakeRole      = "transform"
-$SnowflakePassword  = "Neemb@Password2025"
+$SnowflakePassword  = ""
 $SnowflakeWarehouse = "compute_wh"
 $SnowflakeDatabase  = "NEEMBA"
 $SnowflakeSchema    = "EQUIPEMENT"
-$SnowflakeTable     = "a_bronze_vlinklocalisation" # 
+$SnowflakeTable     = "table_name" # 
 
 
 # SQL creat file format on snowflake
